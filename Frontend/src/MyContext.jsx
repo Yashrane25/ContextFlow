@@ -21,7 +21,7 @@ export const MyProvider = ({ children }) => {
   //REGISTER
   const register = async (username, email, password) => {
     try {
-      const res = await fetch("http://localhost:8080/api/auth/register", {
+      const res = await fetch("https://promptgpt-backend-v4cb.onrender.com/api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, email, password }),
@@ -65,7 +65,7 @@ export const MyProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const res = await fetch("http://localhost:8080/api/auth/login", {
+      const res = await fetch("https://promptgpt-backend-v4cb.onrender.com/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),

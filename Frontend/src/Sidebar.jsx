@@ -22,7 +22,9 @@ function Sidebar() {
   const getAllThreads = async () => {
     //Only fetch if user is logged in
     try {
-      const response = await authFetch("http://localhost:8080/api/thread");
+      const response = await authFetch(
+        "https://promptgpt-backend-v4cb.onrender.com/api/thread"
+      );
       if (!response.ok) return; //stop if unauthorized
 
       const res = await response.json();
@@ -53,7 +55,7 @@ function Sidebar() {
 
     try {
       const response = await authFetch(
-        `http://localhost:8080/api/thread/${newThreadId}`
+        `https://promptgpt-backend-v4cb.onrender.com/api/thread/${newThreadId}`
       );
       if (!response.ok) return;
       const res = await response.json();
@@ -68,7 +70,7 @@ function Sidebar() {
   const deleteThread = async (threadId) => {
     try {
       const response = await authFetch(
-        `http://localhost:8080/api/thread/${threadId}`,
+        `https://promptgpt-backend-v4cb.onrender.com/api/thread/${threadId}`,
         { method: "DELETE" }
       );
       if (!response.ok) return;

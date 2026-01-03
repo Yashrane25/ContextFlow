@@ -32,7 +32,7 @@ function ChatWindow() {
     setNewChat(false);
 
     try {
-      const response = await authFetch("http://localhost:8080/api/chat", {
+      const response = await authFetch("https://promptgpt-backend-v4cb.onrender.com/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: prompt, threadId: currThreadId }),
