@@ -21,11 +21,14 @@ export const MyProvider = ({ children }) => {
   //REGISTER
   const register = async (username, email, password) => {
     try {
-      const res = await fetch("https://promptgpt-backend-v4cb.onrender.com/api/auth/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, email, password }),
-      });
+      const res = await fetch(
+        "https://promptgpt-385w.onrender.com/api/auth/register",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, email, password }),
+        }
+      );
 
       const data = await res.json();
 
@@ -40,36 +43,23 @@ export const MyProvider = ({ children }) => {
       // Save user info
       const userInfo = { username: data.username, email: data.email };
       setUser(userInfo);
-      localStorage.setItem("user", JSON.stringify(userInfo)); 
+      localStorage.setItem("user", JSON.stringify(userInfo));
     } catch (error) {
       console.error("Registration failed:", error.message);
     }
   };
 
   //LOGIN
-  // const login = async (email, password) => {
-  //   const res = await fetch("http://localhost:8080/api/auth/login", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({ email, password }),
-  //   });
-  //   const data = await res.json();
-  //   if (!res.ok) {
-  //     throw new Error(data.error);
-  //   }
-
-  //   localStorage.setItem("token", data.token);
-  //   setToken(data.token);
-  //   setUser({ username: data.username, email: data.email });
-  // };
-
   const login = async (email, password) => {
     try {
-      const res = await fetch("https://promptgpt-backend-v4cb.onrender.com/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
+      const res = await fetch(
+        "https://promptgpt-385w.onrender.com/api/auth/login",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+        }
+      );
 
       const data = await res.json();
 
