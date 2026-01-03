@@ -32,11 +32,14 @@ function ChatWindow() {
     setNewChat(false);
 
     try {
-      const response = await authFetch("https://promptgpt-385w.onrender.com/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: prompt, threadId: currThreadId }),
-      });
+      const response = await authFetch(
+        "https://promptgpt-385w.onrender.com/api/chat",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: prompt, threadId: currThreadId }),
+        }
+      );
       if (!response.ok) return;
       const res = await response.json();
       setReply(res.reply);
@@ -65,7 +68,7 @@ function ChatWindow() {
     logout();
     setUser(null);
     setIsOpen(false);
-    navigate("/chat");
+    navigate("https://promptgpt-385w.onrender.com/chat");
     window.location.reload();
   };
 
