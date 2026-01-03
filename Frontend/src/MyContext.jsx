@@ -68,11 +68,11 @@ export const MyProvider = ({ children }) => {
         return;
       }
 
-      // ✅ Save token
+      //Save token
       localStorage.setItem("token", data.token);
       setToken(data.token);
 
-      // ✅ Save user (THIS FIXES LOGOUT ON REFRESH)
+      //Save user(THIS FIXES LOGOUT ON REFRESH)
       const userInfo = { username: data.username, email: data.email };
       setUser(userInfo);
       localStorage.setItem("user", JSON.stringify(userInfo));
