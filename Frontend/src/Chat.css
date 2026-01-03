@@ -1,0 +1,277 @@
+/* Chat container */
+.chat {
+  flex: 1;
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Each message row */
+.messageRow {
+  display: flex;
+  width: 100%;
+}
+
+/* GPT messages → left */
+.messageRow.left {
+  justify-content: flex-start;
+}
+
+/* User messages → right */
+.messageRow.right {
+  justify-content: flex-end;
+}
+
+/* GPT bubble */
+.gptMessage {
+  color: #ffffff;
+  padding: 14px 18px;
+  max-width: 75%;
+  line-height: 1.6;
+  font-size: 15px;
+  text-align: left;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* User bubble */
+.userMessage {
+  background-color: #323232;
+  color: #ffffff;
+  padding: 14px 18px;
+  border-radius: 12px;
+  max-width: 75%;
+  line-height: 1.6;
+  font-size: 15px;
+  text-align: left;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Subtle ChatGPT spacing feel */
+.messageRow.left .gptMessage {
+  margin-right: auto;
+}
+
+.messageRow.right .userMessage {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+/* Title if not loged in */
+.newChatTitle1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+/* floting animation */
+.letter1 {
+  display: inline-block;
+  animation: wiggle 2s ease-in-out infinite;
+}
+
+.letter1:nth-child(odd) {
+  animation-duration: 2s;
+}
+.letter1:nth-child(even) {
+  animation-duration: 2.5s;
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-1px);
+  }
+  50% {
+    transform: translateX(1px);
+  }
+  75% {
+    transform: translateX(-0.5px);
+  }
+}
+
+.newChatSubtitle1 {
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  color: #d1d5db;
+  line-height: 1.5;
+}
+
+/* flotating animation to p */
+.letter2 {
+  display: inline-block;
+  animation: wiggle 2s ease-in-out infinite;
+}
+
+.letter2:nth-child(odd) {
+  animation-duration: 2s;
+}
+.letter2:nth-child(even) {
+  animation-duration: 2.5s;
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-0.1px);
+  }
+  50% {
+    transform: translateX(0.6px);
+  }
+  75% {
+    transform: translateX(-0.1px);
+  }
+}
+
+/* New chat screen wrapper */
+.newChatWrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-in;
+}
+
+/* Typing animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* h1 typing */
+.newChatTitle2.typing {
+  text-align: center;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 1.5s steps(30, end) forwards;
+}
+
+/* p fade-in after h1 */
+.newChatSubTitle2.typing {
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+  animation-delay: 1.5s;
+  margin-top: 0;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Scrollbar — ChatGPT style */
+.chat::-webkit-scrollbar {
+  width: 3px;
+}
+
+.chat::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+}
+
+.chat::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Code block styling */
+.hljs,
+.gptMessage pre {
+  border-radius: 15px;
+}
+
+.gptMessage pre {
+  background-color: #1e1e1e;
+  padding: 14px;
+  overflow-x: auto;
+  margin: 10px 0;
+}
+
+/* Inline code */
+.gptMessage code {
+  background-color: #2d2d2d;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: "Fira Code", monospace;
+}
+
+/* Markdown headings */
+.gptMessage h1,
+.gptMessage h2,
+.gptMessage h3 {
+  margin: 12px 0 8px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.gptMessage h1 {
+  font-size: 22px;
+}
+
+.gptMessage h2 {
+  font-size: 18px;
+}
+
+.gptMessage h3 {
+  font-size: 16px;
+}
+
+/* Markdown blockquote */
+.gptMessage blockquote {
+  border-left: 4px solid #555;
+  padding-left: 12px;
+  margin: 10px 0;
+  color: #d1d1d1;
+}
+
+/* Markdown lists and paragraphs — horizontal alignment */
+.gptMessage p,
+.gptMessage li {
+  display: inline-block;
+  margin: 0.5rem;
+}
+
+/* Reset default list margins & padding */
+.gptMessage ul,
+.gptMessage ol {
+  margin: 0;
+  padding-left: 0; 
+  list-style-position: inside; 
+}
+
+/* Preserve formatting */
+.pre {
+  white-space: pre-wrap;
+}
