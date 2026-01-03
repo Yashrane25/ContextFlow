@@ -22,7 +22,9 @@ function Sidebar() {
   const getAllThreads = async () => {
     //Only fetch if user is logged in
     try {
-      const response = await authFetch("https://promptgpt-385w.onrender.com/api/thread");
+      const response = await authFetch(
+        "https://promptgpt-385w.onrender.com/api/thread"
+      );
       if (!response.ok) return; //stop if unauthorized
 
       const res = await response.json();
@@ -85,7 +87,7 @@ function Sidebar() {
     <section className="sidebar">
       <div className="top-row">
         <button className="logo-btn" onClick={createNewChat}>
-          <img src="src/assets/Logo.jpg" alt="PromptGPT" className="logo" />
+          <img src="/Logo.jpg" alt="PromptGPT" className="logo" />
         </button>
 
         <button className="icon-btn" onClick={createNewChat}>
