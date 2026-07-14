@@ -44,7 +44,7 @@ function Chat() {
           {user ? (
             <div className="welcomeBox">
               <h1 className="newChatTitle2 typing">
-                Welcome to PromptGPT,{" "}
+                Welcome to ContextFlow,{" "}
                 <span className="usernameGradient">{user.username}</span>
               </h1>
               <p className="newChatSubTitle2 typing">
@@ -55,7 +55,7 @@ function Chat() {
           ) : (
             <div>
               <h1 className="newChatTitle1">
-                {"You must have an account to use PromptGPT. Please log in or register."
+                {"You must have an account to use ContextFlow. Please log in or register."
                   .split("")
                   .map((char, i) => (
                     <span key={i} className="letter1">
@@ -65,7 +65,7 @@ function Chat() {
               </h1>
 
               <p className="newChatSubtitle1">
-                {"Log in or register through the user icon above to access PromptGPT's chat features."
+                {"Log in or register through the user icon above to access ContextFlow's chat features."
                   .split("")
                   .map((char, i) => (
                     <span key={i} className="letter2">
@@ -111,7 +111,8 @@ function Chat() {
                 rehypePlugins={[rehypeHighlight]}
               >
                 {normalizeMarkdown(
-                  latestReply || previousChats[previousChats.length - 1].content
+                  latestReply ||
+                    previousChats[previousChats.length - 1].content,
                 )}
               </ReactMarkdown>
             </div>

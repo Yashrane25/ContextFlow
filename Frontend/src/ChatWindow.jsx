@@ -24,9 +24,11 @@ function ChatWindow() {
   const [loading, setLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
-  // Send prompt to backend
+  //Send prompt to backend
   const getReply = async () => {
-    if (!user) return; // not logged in, skip
+    if (!user) {
+      return; //not logged in, skip
+    }
 
     setLoading(true);
     setNewChat(false);
@@ -40,7 +42,9 @@ function ChatWindow() {
           body: JSON.stringify({ message: prompt, threadId: currThreadId }),
         }
       );
-      if (!response.ok) return;
+      if (!response.ok) {
+        return;
+      }
       const res = await response.json();
       setReply(res.reply);
     } catch (err) {
@@ -75,7 +79,7 @@ function ChatWindow() {
   return (
     <div className="chatWindow">
       <div className="navbar">
-        <span className="name">PromptGPT</span>
+        <span className="name">ContextFlow</span>
 
         <div className="userIconDiv" onClick={handleProfileClick}>
           {user &&
@@ -144,7 +148,7 @@ function ChatWindow() {
         </div>
 
         <p className="info">
-          PromptGPT can make mistakes. Verify important information.
+          ContextFlow can make mistakes. Verify important information.
         </p>
       </div>
     </div>

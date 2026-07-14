@@ -8,7 +8,7 @@ import Register from "./pages/Register.jsx";
 function App() {
   return (
     <Routes>
-      {/* CHAT PAGE — DEFAULT LANDING PAGE */}
+      {/* CHAT PAGE - DEFAULT LANDING PAGE */}
       <Route
         path="/chat"
         element={
@@ -23,7 +23,7 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
 
-      {/* DEFAULT → CHAT */}
+      {/* DEFAULT -> CHAT */}
       <Route path="*" element={<Navigate to="/chat" />} />
     </Routes>
   );
