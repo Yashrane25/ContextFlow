@@ -12,7 +12,7 @@
 
 Markdown-rendered responses · Code syntax highlighting · JWT authentication · Persistent chat history
 
-**🔗 Live Demo:** [ContextFlow-frontend.onrender.com/#/chat](https://promptgpt-frontend.onrender.com/#/chat)
+**🔗 Live Demo:** [ContextFlow](https://promptgpt-frontend.onrender.com/#/chat)
 
 </div>
 
