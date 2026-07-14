@@ -8,7 +8,7 @@
 [![JWT](https://img.shields.io/badge/JWT-Auth-000000?style=flat-square&logo=jsonwebtokens)](https://jwt.io/)
 [![OpenRouter](https://img.shields.io/badge/OpenRouter-LLaMA_3.1-6E56CF?style=flat-square)](https://openrouter.ai/)
 
-**A structured, user-friendly chatbot interface for interacting with large language models.**
+**A full-stack AI conversation platform for secure, intelligent interactions with large language models.**
 
 Markdown-rendered responses · Code syntax highlighting · JWT authentication · Persistent chat history
 
